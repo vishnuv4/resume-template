@@ -1,0 +1,143 @@
+\documentclass[letterpaper,11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%% INCLUDES %%%%%%%%%%%%%%%%%%%%
+
+\input{packages}
+\input{customcommands}
+\input{misc_settings}
+
+%%%%%%%%%%%%%%%%%%%% FLAGS %%%%%%%%%%%%%%%%%%%%
+\flag{education}        		{\1}
+\flag{technicalskills}  		{\1}
+%-----EXPERIENCE------------
+\flag{firstcompany}				{\1}
+\flag{secondcompany}			{\1}
+\flag{secondcompany_some}		{\1}
+\flag{secondcompany_another}	{\1}
+\flag{thirdcompany}				{\1}
+%-----PROJECTS--------------
+\flag{firstproject}				{\1}
+\flag{secondproject}			{\1}
+\flag{thirdproject}				{\1}
+%%%%%%%%%%%%%%%%%%%% RESUME START %%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+	\textbf{\Huge John Doe} \\ \vspace{1pt}
+	123-456-789 $|$
+	\href{mailto:johndoe@gmail.com}{\underline{johndoe@gmail.com}} $|$
+	\href{https://linkedin.com/}{\underline{linkedin.com/johndoe}} $|$
+	\href{https://github.com/}{\underline{github.com/johndoe}}
+\end{center}
+
+%-----------EDUCATION-----------
+\includeiftrue{education}{
+	\section{Education}
+	\resumeSubHeadingList{
+		\resumeSubheading
+		{University \#1}{MM YYYY}{Masters Degree}{GPA}
+
+		\vspace{0.5mm}
+		\hspace{4mm} {\smaller[1]Coursework: Course \#1, Course \#2}
+
+		\resumeSubheading
+		{University \#2}{MM YYYY}
+		{Bachelor of Social Media Engineering}{GPA}
+
+		\vspace{0.5mm}
+		\hspace{4mm} {\smaller[1]Coursework: Course \#1, Course \#2}
+	}
+}
+
+\includeiftrue{technicalskills}{
+	\section{Technical Skills}
+	\begin{itemize}[leftmargin=0.15in, label={}]
+		\item{
+		      \textit{Software} | Coding and stuff \\
+		      \textit{Hardware} | Circuits and stuff \\
+		      \textit{Misc} | Stuff and stuff
+		      }
+	\end{itemize}
+}
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingList{
+
+	\includeiftrue{firstcompany}{
+		\resumeSubheadingTwo{\larger[1]First Company}{Location}
+		\resumeSubheadingIndent{Designation}{Start Date -- End Date}
+		\resumeItemList{
+			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+			\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
+		}
+	}
+
+	\includeiftrue{secondcompany}{
+		\resumeSubheadingTwo{\larger[1]Second Company}{Location}
+		\vspace{-12pt}
+		\includeiftrue{secondcompany_some}{
+			\resumeSubheadingIndent{Some Designation}{Start Date -- End Date}
+			\resumeItemList{
+				\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+				\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+				\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
+			}
+		}
+		\includeiftrue{secondcompany_another}{
+			\resumeSubheadingIndent{Another Designation}{Start Date -- End Date}
+			\resumeItemList{
+				\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+				\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+				\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
+			}
+		}
+	}
+
+	\includeiftrue{thirdcompany}{
+		\resumeSubheadingTwo{\larger[1]Third Company}{Location}
+			\vspace{-13pt}
+			\resumeSubheadingIndent{Designation}{Start Date -- End Date}
+			\resumeItemList{
+				\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+				\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+				\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
+			}
+	}
+}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingList{
+
+	\includeiftrue{firstproject}{
+		\resumeSubheading{First Project name $|$ \emph{Technologies used} $|$ \tealhref{https://github.com/}{GitHub repo link}}{Year}{\small{Professor/Mentor (optional)}}{}
+		\resumeItemList{
+			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+			\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
+		}
+	}
+
+	\includeiftrue{secondproject}{
+		\resumeSubheading{Second Project name $|$ \emph{Technologies used} $|$ \tealhref{https://github.com/}{GitHub repo link}}{Year}{\small{Professor/Mentor (optional)}}{}
+		\resumeItemList{
+			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+			\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
+		}
+	}
+
+	\includeiftrue{thirdproject}{
+		\resumeSubheading{Third Project name $|$ \emph{Technologies used} $|$ \tealhref{https://github.com/}{GitHub repo link}}{Year}{\small{Professor/Mentor (optional)}}{}
+		\resumeItemList{
+			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+			\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
+		}
+	}
+}
+
+\end{document}
+
