@@ -14,11 +14,33 @@
 	\end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubheadingTwo}[2]{
+\newcommand{\resumeSubheadingBold}[4]{
+	\vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\hspace{3mm}\textit{#3} & #4 \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingTwoBold}[2]{
 	\vspace{-2pt}\item
 	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
 		\textbf{#1} & #2 \\
 	\end{tabular*} \vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingTwo}[2]{
+	\vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		#1 & #2 \\
+	\end{tabular*} \vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingThree}[3]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{@{}p{0.4\textwidth}c@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textbf{\textsc{#2}} & #3 \\
+    \end{tabular*} \vspace{-7pt}
 }
 
 \newcommand{\resumeSubheadingTwoNoSC}[2]{
@@ -87,6 +109,9 @@
 	\fi
 }
 
+\newcommand{\emphasis}[1]{
+	\textbf{\textit{#1}}
+}
 
 \newcommand{\1}{true}
 \newcommand{\0}{false}

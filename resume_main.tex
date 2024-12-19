@@ -10,17 +10,19 @@
 % \1 to enable the section (have it show up in the pdf) 
 % \0 to disable it
 \flag{education}                {\1}
-\flag{technicalskills}          {\1}
 %-----EXPERIENCE------------
 \flag{firstcompany}             {\1}
 \flag{secondcompany}            {\1}
-\flag{secondcompany_some}       {\1}
-\flag{secondcompany_another}    {\1}
+\flag{secondcompany_1}      	{\1}
+\flag{secondcompany_2}    		{\1}
 \flag{thirdcompany}             {\1}
+\flag{fourthcompany}            {\1}
 %-----PROJECTS--------------
 \flag{firstproject}             {\1}
 \flag{secondproject}            {\1}
 \flag{thirdproject}             {\1}
+%-----TECHNICAL SKILLS------
+\flag{technicalskills}          {\1}
 %%%%%%%%%%%%%%%%%%%% RESUME START %%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -38,37 +40,22 @@
 	\section{Education}
 	\resumeSubHeadingList{
 		\resumeSubheading
-		{University \#1}{MM YYYY}{Masters Degree}{GPA}
-
-		\vspace{0.5mm}
-		\hspace{4mm} {\smaller[1]Coursework: Course \#1, Course \#2}
+		{University \#1 | {\smaller[1]MSE in something}}{MM YYYY}{\smaller[1]Coursework: Course \#1, Course \#2}{GPA}
 
 		\resumeSubheading
-		{University \#2}{MM YYYY}
-		{Bachelor of Social Media Engineering}{GPA}
-
-		\vspace{0.5mm}
-		\hspace{4mm} {\smaller[1]Coursework: Course \#1, Course \#2}
+		{University \#2 | {\smaller[1] BE in something}}{MM YYYY}
+		{\smaller[1]Coursework: Course \#1, Course \#2}{GPA}
 	}
 }
 
-\includeiftrue{technicalskills}{
-	\section{Technical Skills}
-	\begin{itemize}[leftmargin=0.15in, label={}]
-		\item{
-		      \textit{Software} | Coding and stuff \\
-		      \textit{Hardware} | Circuits and stuff \\
-		      \textit{Misc} | Stuff and stuff
-		      }
-	\end{itemize}
-}
+\vspace{5pt}
+
 %-----------EXPERIENCE-----------
 \section{Experience}
 \resumeSubHeadingList{
 
 	\includeiftrue{firstcompany}{
-		\resumeSubheadingTwo{\larger[1]First Company}{Location}
-		\resumeSubheadingIndent{Designation}{Start Date -- End Date}
+		\resumeSubheadingThree{Designation}{\larger[1]First Company}{Start Date -- End Date}
 		\resumeItemList{
 			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
 			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
@@ -76,31 +63,35 @@
 		}
 	}
 
-	\includeiftrue{secondcompany}{
-		\resumeSubheadingTwo{\larger[1]Second Company}{Location}
-		\vspace{-12pt}
-		\includeiftrue{secondcompany_some}{
-			\resumeSubheadingIndent{Some Designation}{Start Date -- End Date}
-			\resumeItemList{
-				\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
-				\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
-				\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
-			}
+	\includeiftrue{secondcompany_1}{
+	\resumeSubheadingThree{Designation \#1}{\larger[1]Second Company}{Start Date -- End Date}
+		\resumeItemList{
+			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+			\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
 		}
-		\includeiftrue{secondcompany_another}{
-			\resumeSubheadingIndent{Another Designation}{Start Date -- End Date}
-			\resumeItemList{
-				\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
-				\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
-				\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
-			}
+	}
+
+	\includeiftrue{secondcompany_2}{
+		\resumeSubheadingThree{Designation \#2}{\larger[1]Second Company}{Start Date -- End Date}
+		\resumeItemList{
+			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+			\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
 		}
 	}
 
 	\includeiftrue{thirdcompany}{
-		\resumeSubheadingTwo{\larger[1]Third Company}{Location}
-		\vspace{-13pt}
-		\resumeSubheadingIndent{Designation}{Start Date -- End Date}
+		\resumeSubheadingThree{Designation}{\larger[1]Third Company}{Start Date -- End DateLocation}
+		\resumeItemList{
+			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
+			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
+			\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
+		}
+	}
+
+	\includeiftrue{fourthcompany}{
+		\resumeSubheadingThree{Designation}{\larger[1]Fourth Company}{Start Date -- End DateLocation}
 		\resumeItemList{
 			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
 			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
@@ -114,7 +105,7 @@
 \resumeSubHeadingList{
 
 	\includeiftrue{firstproject}{
-		\resumeSubheading{First Project name $|$ \emph{Technologies used} $|$ \tealhref{https://github.com/}{GitHub repo link}}{Year}{\small{Professor/Mentor (optional)}}{}
+		\resumeSubheadingBold{First Project name | \tealhref{https://github.com/}{GitHub}}{Year}{\small{Professor/Mentor (optional)}}{}
 		\resumeItemList{
 			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
 			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
@@ -123,7 +114,7 @@
 	}
 
 	\includeiftrue{secondproject}{
-		\resumeSubheading{Second Project name $|$ \emph{Technologies used} $|$ \tealhref{https://github.com/}{GitHub repo link}}{Year}{\small{Professor/Mentor (optional)}}{}
+		\resumeSubheadingBold{Second Project name | \tealhref{https://github.com/}{GitHub}}{Year}{\small{Professor/Mentor (optional)}}{}
 		\resumeItemList{
 			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
 			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
@@ -132,13 +123,27 @@
 	}
 
 	\includeiftrue{thirdproject}{
-		\resumeSubheading{Third Project name $|$ \emph{Technologies used} $|$ \tealhref{https://github.com/}{GitHub repo link}}{Year}{\small{Professor/Mentor (optional)}}{}
+		\resumeSubheadingBold{Third Project name \tealhref{https://github.com/}{GitHub}}{Year}{\small{Professor/Mentor (optional)}}{}
 		\resumeItemList{
 			\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore}
 			\resumeItem{magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo}
 			\resumeItem{consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}
 		}
 	}
+}
+
+\includeiftrue{technicalskills}{
+	\section{Technical Skills}
+	\small
+	\begin{multicols}{2}
+		\emphasis{Software} | Blah, Blah, Blah, Blah \\
+		\emphasis{Hardware} | Blah, Blah, Blah, Blah, Blah \\
+		\emphasis{CAD \& Simulation} | Blah, Blah, Blah\\
+		\columnbreak
+		\emphasis{Protocols} | Blah, Blah, Blah, Blah \\
+		\emphasis{Operating Systems} | Blah, Blah, Blah \\
+		\emphasis{Misc} | Blah, Blah, Blah
+	\end{multicols}
 }
 
 \end{document}
