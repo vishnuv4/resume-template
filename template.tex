@@ -1,0 +1,164 @@
+%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{bold-extra}
+\usepackage{textcomp}
+\usepackage{relsize}
+\usepackage{ifthen}
+\usepackage{etoolbox}
+\usepackage{multicol}
+\usepackage{helvet}
+\renewcommand\familydefault{\sfdefault}
+\setlength{\footskip}{4.08003pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+	\vspace{-12pt}\scshape\raggedright\Large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%%%%%%%%%%%%%%%%%%%% CUSTOM COMMANDS %%%%%%%%%%%%%%%%%%%%
+
+\input{custom_commands}
+
+%%%%%%%%%%%%%%%%%%%% INCLUDE FLAGS %%%%%%%%%%%%%%%%%%%%
+
+% This section is where you selectively include or exclude sections.
+% Set one of the \1's to \0, and see the magic happen.
+
+\flag{education}        {\1}
+%-----EXPERIENCE------------
+\flag{exp1}           	{\1}
+\flag{exp2}				{\1}
+\flag{exp3}				{\1}
+\flag{exp4}       		{\1}
+\flag{exp5}        		{\1}
+\flag{exp6}         	{\1}
+\flag{exp7}   			{\1}
+\flag{exp8}       		{\1}
+%-----PROJECTS--------------
+\flag{proj1}			{\1}
+\flag{proj2}            {\1}
+\flag{proj3}      		{\1}		
+\flag{proj4}            {\1}
+\flag{proj5}         	{\1}
+\flag{proj6}         	{\1}
+%---------------------------
+\flag{technicalskills}  {\1}
+\flag{publications}     {\1}
+
+%%%%%%%%%%%%%%%%%%%% RESUME START %%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%-----------NAME AND DETAILS-----------
+\begin{center}
+	\textbf{\Huge John Doe} \\ \vspace{3pt}
+	123-456-7890 $|$
+	\tealhref{mailto:johndoe@gmail.com}{johndoe@gmail.com} $|$
+	\tealhref{https://linkedin.com/}{linkedin.com/johndoe} $|$
+	\tealhref{https://github.com/}{github.com/johndoe}\\
+	\hrule
+\end{center}
+
+%-----------EDUCATION-----------
+\includeiftrue{education}{
+    \section{Education}
+    \resumeSubHeadingList{
+    \resumeSubheading{University \#1 | \textbf{{\smaller[1] Degree \#1}}}{Date} {\smaller[1]Coursework: Course \#1, Course \#2, Course \#3, Course \#4}{}
+
+    \resumeSubheading{University \#2 | \textbf{{\smaller[1] Degree \#2}}} {Date} {\smaller[1]Coursework: Course \#1, Course \#2, Course \#3, Course \#4} {} 
+    } 
+}
+%-----------EXPERIENCE-----------
+
+\input{content/experience}	
+
+% content/experience.tex contains the experience details
+% The \includeiftrue is responsible for selective inclusion/exclusion
+% The first argument is the flag defined above.
+% The second argument is the content to be included, defined in content/experience.tex
+% NOTE: The second argument is analogous to a text replacement. You can name the argument whatever you like, as long as the string after the backslash only contains alphabets (no numbers or special characters).
+
+% It is designed this way to let you easily reorder the sections as you see fit.
+
+\vspace{5pt}
+\section{Experience}
+\resumeSubHeadingList{
+
+	\includeiftrue{exp1}{\expfirst}
+
+	\includeiftrue{exp2}{\expsecond}
+
+	\includeiftrue{exp3}{\expthird}
+
+	\includeiftrue{exp4}{\expfourth}
+
+	\includeiftrue{exp5}{\expfifth}
+
+	\includeiftrue{exp6}{\expsixth}
+
+	\includeiftrue{exp7}{\expseventh}
+
+	\includeiftrue{exp8}{\expeighth}
+}
+
+%-----------PROJECTS-----------
+
+\input{content/projects} 
+
+% content/projects.tex contains the project details
+% See the comments in the experience section for more info
+
+\section{Projects}
+\resumeSubHeadingList{
+	\includeiftrue{proj1}{\projfirst}
+
+	\includeiftrue{proj2}{\projsecond}
+
+	\includeiftrue{proj3}{\projthird}
+
+	\includeiftrue{proj4}{\projfourth}
+
+	\includeiftrue{proj5}{\projfifth}
+
+	\includeiftrue{proj6}{\projsixth}
+}
+
+\includeiftrue{technicalskills}{
+	\input{content/technicalskills}
+}
+
+\includeiftrue{publications}{
+	\input{content/publications}
+}
+
+\end{document}
