@@ -10,15 +10,13 @@ A template I use for my resume.
 - Version control: You can selectively include or exclude portions of your resume, allowing you to not just preserve past experiences but also tailor your resume for different job profiles if you have experiences spanning across a few.
 
 ## File structure
-There are 4 tex files that make up this template. You only need to make changes in the first one - the others are "supporting" documents made for organization purposes.
-- ```resume_main.tex```: The main file where you would add your resume content 
-- ```customcommands.tex```: All the custom commands used in the main tex file are defined here
-- ```misc_settings.tex```: A bunch of LaTex settings related to formatting
-- ```packages.tex```: LaTeX preamble
+There are 4 tex files that make up this template. 
+- ```experience.tex```
+- ```projects.tex```
+- ```publications.tex```
+- ```technicalskills.tex```
 
 ## Main file
-
-The first thing to discuss is the structure of the main document ```resume_main.tex```. Typically, this is the only one you would have to change to actually add/modify/remove content, though you can modify other files to affect document-wide characteristics.
 
 The entire document is hierarchical - within a section, you can multiple subheadings and bullet points for each in a completely hierarchical way. 
 
@@ -45,4 +43,4 @@ Syntax:
 
 ## Questions?
 
-Contact me lol
+Contact me lol. vishnuchidambaranvenkatesh@gmail.com
